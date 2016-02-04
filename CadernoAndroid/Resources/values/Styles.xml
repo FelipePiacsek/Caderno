@@ -1,0 +1,13 @@
+﻿<resources>
+	<style name="Theme.Caderno" parent="android:Theme.Holo.Light">
+		<!-- Your customizations go here -->
+		<item name="android:actionBarStyle">@style/RedActionBar</item>
+	</style>
+	<style name="RedActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#FE0000</item>
+        <item name="android:titleTextStyle">@style/WhiteTitleText</item>
+    </style>
+    <style name="WhiteTitleText" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    	<item name="android:textColor">#FFFFFF</item>
+    </style> 
+</resources>

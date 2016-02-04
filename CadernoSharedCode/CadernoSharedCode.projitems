@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{579BD547-2865-4254-B242-8EB4DDB25288}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Caderno.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Service\AbstractService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\AnotacaoService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\InitializationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Anotacao.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\IModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Tag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DatabaseInitializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Attribute\ManyToManyAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\TableFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\ConnectionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DAO\AnotacaoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DAO\BaseDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DAO\TagDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\DateUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\StringUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ReflectionUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Database\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Service\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\Attribute\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Database\DAO\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
+  </ItemGroup>
+</Project>

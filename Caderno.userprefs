@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="CadernoAndroid\CadernoAndroid.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="Android.0424295355" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CadernoSharedCode\Database\DatabaseInitializer.cs">
+    <Files>
+      <File FileName="CadernoSharedCode\Database\DatabaseInitializer.cs" Line="68" Column="5" />
+      <File FileName="CadernoSharedCode\Model\Attribute\ManyToManyAttribute.cs" Line="5" Column="45" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="C:\Development\Mobile\Tasky\TaskyAndroid\TodoItemScreen.cs" line="79" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="TaskySharedCode\TodoDatabaseADO.cs" line="135" offsetX="561" offsetY="2814" expression="command" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.TaskyAndroid AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.CadernoAndroid AndroidDesignerPreferredDevice="Nexus 4" AndroidDesignerPreferredTheme="Theme.DeviceDefault" />
+</Properties>
