@@ -14,22 +14,22 @@ namespace Caderno.Shared
 			{ 
 				var sqliteFilename = "CadernoDatabase.db3";
 				#if NETFX_CORE
-				var path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, sqliteFilename);
+					var path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, sqliteFilename);
 				#else
 
-				#if SILVERLIGHT
-				var path = sqliteFilename;
-				#else
+					#if SILVERLIGHT
+						var path = sqliteFilename;
+					#else
 
-				#if __ANDROID__
-				string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); ;
-				#else
-				string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-				string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
-				#endif
+						#if __ANDROID__
+							string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); ;
+						#else
+							string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
+							string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
+						#endif
 
-				var path = Path.Combine (libraryPath, sqliteFilename);
-				#endif
+						var path = Path.Combine (libraryPath, sqliteFilename);
+					#endif
 
 				#endif
 				return path;	

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Caderno.Shared
 {
@@ -6,9 +7,12 @@ namespace Caderno.Shared
 	{
 		private AnotacaoDAO dao;
 
+		private TagService tagService;
+
 		public AnotacaoService ()
 		{
 			dao = new AnotacaoDAO ();
+			tagService = new TagService();
 		}
 
 		#region implemented abstract members of AbstractService
@@ -19,6 +23,22 @@ namespace Caderno.Shared
 		}
 
 		#endregion
+
+		public override int Save(Anotacao anotacao)
+		{
+			if (anotacao.Tags != null) 
+			{
+				List<int> tagIds = new List<int> ();
+				foreach (Tag tag in anotacao.Tags) 
+				{
+					tagService.Save (tag);
+					tagIds.Add(tag.ID);
+				}
+				int anotacaoId = base.Save (anotacao);
+				base.SaveCollection<Tag> (anotacaoId, tagIds);
+			}
+			return 0;
+		}
 	}
 }
 

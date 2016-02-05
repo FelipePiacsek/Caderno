@@ -26,6 +26,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utils\DateUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\StringUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\ReflectionUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\TagService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\DatebaseUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

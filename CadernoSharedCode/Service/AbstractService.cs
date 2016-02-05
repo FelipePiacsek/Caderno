@@ -11,22 +11,32 @@ namespace Caderno.Shared
 		{
 		}
 
-		public int SaveOrUpdate(T model)
+		public virtual int Save(T model)
 		{
-			return GetDAO ().SaveOrUpdate (model);
+			return GetDAO ().Save (model);
 		}
 
-		public int Remove(T model)
+		public virtual void SaveCollection<E> (int ownerId, List<int> ownedIds) where E : IModel
+		{
+			GetDAO().SaveManyToManyCollection<E>(ownerId, ownedIds);
+		}
+
+		public virtual int Update(T model)
+		{
+			return GetDAO ().Update (model);
+		}
+
+		public virtual int Remove(T model)
 		{
 			return GetDAO ().RemoveById (model.GetId ());
 		}
 
-		public List<T> ListAll()
+		public virtual List<T> ListAll()
 		{
 			return GetDAO ().FetchAll ();
 		}
 
-		public T FindById(int id)
+		public virtual T FindById(int id)
 		{
 			return GetDAO ().FetchById (id);
 		}

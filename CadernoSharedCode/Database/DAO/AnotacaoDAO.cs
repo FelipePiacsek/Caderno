@@ -7,6 +7,12 @@ namespace Caderno.Shared
 		public AnotacaoDAO ()
 		{
 		}
+
+		public Anotacao findCompleteById(int id)
+		{
+			Anotacao anotacao = base.FetchById (id);
+
+		}
 	}
 }
 

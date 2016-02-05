@@ -26,15 +26,35 @@ namespace Caderno.Shared
 			this.connectionManager = null;
 		}
 
-		public int SaveOrUpdate(T model)
+		public int Save(T model)
 		{
-			
-			if (model.GetId() > 0) {
-				return this.connectionManager.GetConnection().Update (model);
-			} else {
-				return this.connectionManager.GetConnection().Insert (model);
-			}
+			return this.connectionManager.GetConnection().Insert (model);
+		}
 
+		public void SaveManyToManyCollection<E> (int ownerId, List<int> ownedIds) where E : IModel
+		{
+			string ownerName = typeof(T).Name;
+			string ownedName = typeof(E).Name;
+			string tableName = DatebaseUtils.ManyToManyTableName (ownerName, ownedName);
+			string query = DatebaseUtils.ManyToManyInsertionQuery (tableName, ownerName, ownedName, ownerId, ownedIds);
+			this.connectionManager.GetConnection ().Execute (query);
+		}
+
+		public IEnumerable<E> FetchManyToManyCollection<E>(int ownerId) where E : IModel
+		{
+			string ownerName = typeof(T).Name;
+			string ownedName = typeof(E).Name;
+			string tableName = DatebaseUtils.ManyToManyTableName (ownerName, ownedName);
+			string queryManyToManyTable = DatebaseUtils.ManyToManyTableSelectQuery (tableName, ownerId);
+			List<int> collectedIds = this.connectionManager.GetConnection ().Query<int> (queryManyToManyTable).ToList ();
+
+
+
+		}
+
+		public int Update(T model)
+		{
+			return this.connectionManager.GetConnection().Update (model);
 		}
 
 		public T FetchById(int id)

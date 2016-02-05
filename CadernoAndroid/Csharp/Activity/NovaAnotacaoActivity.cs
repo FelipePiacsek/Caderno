@@ -59,7 +59,26 @@ namespace CadernoAndroid.Screens
 			btnSalvar.Click += (sender, e) => {
 				anotacao.Texto = anotacoesText.Text;
 				anotacao.Titulo = tituloText.Text;
-				anotacaoService.SaveOrUpdate(anotacao);
+
+				Tag t1 = new Tag();
+				t1.nome = "vida particular";
+				Tag t2 = new Tag();
+				t2.nome = "trabalho";
+
+				ISet<Tag> tags = new HashSet<Tag>();
+				tags.Add(t1);
+				tags.Add(t2);
+
+				anotacao.Tags = tags;
+
+				if(anotacao.ID > 0)
+				{
+					anotacaoService.Update(anotacao);
+				}
+				else
+				{
+					anotacaoService.Save(anotacao);
+				}
 				Finish();
 			};
 		}
